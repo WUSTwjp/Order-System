@@ -14,6 +14,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ordersystem.common.NetWorkReceiver;
+import com.example.ordersystem.dao.GoodDao;
+import com.example.ordersystem.dao.OrderDao;
+import com.example.ordersystem.dao.ShoppingGoodDao;
+import com.example.ordersystem.dao.impl.GoodDaoImpl;
+import com.example.ordersystem.dao.impl.OrderDaoImpl;
+import com.example.ordersystem.dao.impl.ShoppingGoodDaoImpl;
 
 import java.lang.reflect.Method;
 import java.util.concurrent.atomic.AtomicReference;
@@ -22,6 +28,9 @@ import java.util.function.Supplier;
 
 public class CommonActivity extends AppCompatActivity {
     NetWorkReceiver netWorkReceiver;
+    protected GoodDao goodDao = new GoodDaoImpl();
+    protected OrderDao orderDao = new OrderDaoImpl();
+    protected ShoppingGoodDao shoppingGoodDao = new ShoppingGoodDaoImpl();
 
     @Override
     protected void onResume() {
@@ -31,14 +40,12 @@ public class CommonActivity extends AppCompatActivity {
         IntentFilter filter = new IntentFilter();
         filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
         registerReceiver(netWorkReceiver, filter);
-        System.out.println("注册");
         super.onResume();
     }
 
     @Override
     protected void onPause() {
         unregisterReceiver(netWorkReceiver);
-        System.out.println("注销");
         super.onPause();
     }
 

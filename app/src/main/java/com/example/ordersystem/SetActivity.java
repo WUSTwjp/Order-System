@@ -19,6 +19,6 @@ public class SetActivity extends CommonActivity {
 
     public void save(View view) {
         EditText editText = findViewById(R.id.set_text_address);
-        GoodsDB.setAddressAndPay(editText.getText().toString(), "微信");
+        orderDao.setAddressAndPay(editText.getText().toString(), "微信");
     }
 }

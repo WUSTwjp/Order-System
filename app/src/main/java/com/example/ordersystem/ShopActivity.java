@@ -32,11 +32,11 @@ public class ShopActivity extends CommonActivity {
         setContentView(R.layout.activity_shop);
         Intent intent = getIntent();
         Optional.ofNullable(intent.getStringExtra("select")).ifPresent(name -> {
-            Good good = GoodsDB.getByName(name);
-            GoodsDB.addShoppingGood(new ShoppingGood(good));
+            Good good = goodDao.getByName(name);
+            shoppingGoodDao.addShoppingGood(new ShoppingGood(good));
         });
         RecyclerView mRecyclerView = findViewById(R.id.recyclerview1);
-        mAdapter = new ShoppingListAdapter(this, GoodsDB.getAllShoppingGoods());
+        mAdapter = new ShoppingListAdapter(this, shoppingGoodDao.getAllShoppingGoods());
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 

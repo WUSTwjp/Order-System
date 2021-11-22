@@ -21,6 +21,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.ordersystem.DetailActivity;
 import com.example.ordersystem.R;
 import com.example.ordersystem.common.GoodsDB;
+import com.example.ordersystem.dao.ShoppingGoodDao;
+import com.example.ordersystem.dao.impl.ShoppingGoodDaoImpl;
 import com.example.ordersystem.entity.ShoppingGood;
 
 import java.util.List;
@@ -31,6 +33,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingViewHolder
     private LayoutInflater mInflater;
     private Context context;
     private int mPosition = -1;
+    private ShoppingGoodDao shoppingGoodDao = new ShoppingGoodDaoImpl();
 
     public ShoppingListAdapter(Context context,
                                List<ShoppingGood> mShoppingGoodList) {
@@ -44,7 +47,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingViewHolder
         System.out.println(mPosition);
         if (mPosition != -1) {
             ShoppingGood shoppingGood = mShoppingGoodList.get(mPosition);
-            GoodsDB.countAdd(shoppingGood.getGoodId(), -1 * shoppingGood.getCount());
+            shoppingGoodDao.countAdd(shoppingGood.getGoodId(), -1 * shoppingGood.getCount());
         }
     }
 
@@ -52,7 +55,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingViewHolder
     public void updateCount(Integer count) {
         if (mPosition != -1) {
             Integer goodId = mShoppingGoodList.get(mPosition).getGoodId();
-            GoodsDB.updateCount(goodId, count);
+            shoppingGoodDao.updateCount(goodId, count);
         }
     }
 
@@ -90,6 +93,7 @@ class ShoppingViewHolder extends RecyclerView.ViewHolder implements View.OnClick
     public final EditText editText;
     final ShoppingListAdapter mAdapter;
     private Context context;
+    private ShoppingGoodDao shoppingGoodDao = new ShoppingGoodDaoImpl();
 
     public ShoppingViewHolder(View itemView, ShoppingListAdapter adapter, Context context) {
         super(itemView);
@@ -113,7 +117,7 @@ class ShoppingViewHolder extends RecyclerView.ViewHolder implements View.OnClick
             @Override
             public void afterTextChanged(Editable s) {
                 if (!s.toString().isEmpty()) {
-                    GoodsDB.updateCount(nameView.getText().toString(), Integer.parseInt(s.toString()));
+                    shoppingGoodDao.updateCount(nameView.getText().toString(), Integer.parseInt(s.toString()));
                 }
             }
         });

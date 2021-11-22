@@ -28,7 +28,7 @@ public class SearchActivity extends CommonActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         listView = (ListView) findViewById(R.id.lv);
-        List<String> list= GoodsDB.getAllName();
+        List<String> list= goodDao.getAllName();
         final ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(adapter);
         //为ListView启动过滤

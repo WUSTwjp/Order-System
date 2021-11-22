@@ -14,10 +14,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class GoodsDB {
-    private static final List<Good> goodList = new ArrayList<>();
+    public static final List<Good> goodList = new ArrayList<>();
     private static Integer counter = 0;
-    private static final List<ShoppingGood> shoppingList = new ArrayList<>();
-    private static final Order order=new Order();
+    public static final List<ShoppingGood> shoppingList = new ArrayList<>();
+    public static final Order order=new Order();
 
     static {
         goodList.add(new Good(counter++, "可乐", TypeConst.DRINK, R.drawable.drink, "可口可乐，很好喝，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了"));
@@ -36,94 +36,5 @@ public class GoodsDB {
         goodList.add(new Good(counter++, "冰淇淋蛋糕", TypeConst.FUN, R.drawable.fun, "冰淇淋蛋糕，很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了"));
         goodList.add(new Good(counter++, "提拉米苏", TypeConst.FUN, R.drawable.fun, "提拉米苏，很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了"));
     }
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static List<String> getAllName() {
-        return goodList.parallelStream().map(Good::getGoodName).collect(Collectors.toList());
-    }
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static List<Good> getByType(String type) {
-        return goodList.parallelStream().filter(g -> g.getType().equals(type)).collect(Collectors.toList());
-    }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static Good getByName(String name) {
-        return goodList.parallelStream().filter(g -> g.getGoodName().equals(name)).findFirst().orElseThrow(RuntimeException::new);
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static void addShoppingGood(ShoppingGood shoppingGood) {
-        boolean isPresent = shoppingList.parallelStream().anyMatch(s -> s.getGoodId().equals(shoppingGood.getGoodId()));
-        if (!isPresent) {
-            shoppingList.add(shoppingGood);
-        } else {
-            countAdd(shoppingGood.getGoodId(), 1);
-        }
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static void countAdd(Integer shoppingGoodId, Integer count) {
-        shoppingList.parallelStream()
-                .filter(s -> s.getGoodId().equals(shoppingGoodId))
-                .findFirst()
-                .ifPresent(s -> {
-                    s.setCount(s.getCount() + count);
-                    if (s.getCount() < 1) {
-                        remove(s);
-                    }
-                });
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static void updateCount(Integer shoppingGoodId, Integer count) {
-        shoppingList.parallelStream()
-                .filter(s -> s.getGoodId().equals(shoppingGoodId))
-                .findFirst()
-                .ifPresent(s -> {
-                    s.setCount(count);
-                    if (s.getCount() < 1) {
-                        remove(s);
-                    }
-                });
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static void updateCount(String shoppingGoodName, Integer count) {
-        shoppingList.parallelStream()
-                .filter(s -> s.getGoodName().equals(shoppingGoodName))
-                .findFirst()
-                .ifPresent(s -> {
-                    s.setCount(count);
-                    if (s.getCount() < 1) {
-                        remove(s);
-                    }
-                });
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static void countAdd(String shoppingGoodName, Integer count) {
-        shoppingList.parallelStream()
-                .filter(s -> s.getGoodName().equals(shoppingGoodName))
-                .findFirst()
-                .ifPresent(s -> s.setCount(s.getCount() + count));
-    }
-
-    public static List<ShoppingGood> getAllShoppingGoods() {
-        return shoppingList;
-    }
-
-    public static void remove(int id) {
-        shoppingList.remove(id);
-    }
-
-    public static void remove(ShoppingGood good) {
-        shoppingList.remove(good);
-    }
-
-    public static void setAddressAndPay(String address, String mode) {
-        order.setAddress(address);
-        order.setPaymentMode(mode);
-    }
-    public static Order getOrder(){
-        return order;
-    }
 }

@@ -24,7 +24,7 @@ public class DetailActivity extends CommonActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         Intent intent = getIntent();
-        good = GoodsDB.getByName(intent.getStringExtra("detail"));
+        good = goodDao.getByName(intent.getStringExtra("detail"));
         TextView name = findViewById(R.id.detail_name);
         TextView content = findViewById(R.id.detail_content);
         ImageView imageView = findViewById(R.id.detail_picture);

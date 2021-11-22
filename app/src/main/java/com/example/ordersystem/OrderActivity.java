@@ -12,14 +12,14 @@ import com.example.ordersystem.entity.Order;
 
 import java.util.Optional;
 
-public class OrderActivity extends AppCompatActivity {
+public class OrderActivity extends CommonActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-        Optional.ofNullable(GoodsDB.getOrder().getAddress()).ifPresent(address -> {
+        Optional.ofNullable(orderDao.getOrder().getAddress()).ifPresent(address -> {
             EditText editText = findViewById(R.id.text_address);
             editText.setText(address);
         });
