@@ -34,25 +34,6 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="88dp"-->
-<!--        android:layout_height="67dp"-->
-<!--        android:orientation="horizontal">-->
-
-<!--        &lt;!&ndash;        <Button&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:id="@+id/down"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_width="20dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_height="30dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:text="-"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:textSize="4sp" />&ndash;&gt;-->
-
-<!--        &lt;!&ndash;        <Button&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:id="@+id/up"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_width="20dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_height="30dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:text="+"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:textSize="4sp" />&ndash;&gt;-->
-<!--    </LinearLayout>-->
 
     <EditText
         android:id="@+id/count"

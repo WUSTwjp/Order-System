@@ -1,25 +1,19 @@
 package com.example.ordersystem;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.widget.SearchView;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import com.example.ordersystem.common.GoodsDB;
-import com.example.ordersystem.entity.Good;
 
 import java.util.List;
 
-public class SearchActivity extends CommonActivity {
+public class SearchActivity extends BaseActivity {
     private SearchView searchView;
     private ListView listView;
     @RequiresApi(api = Build.VERSION_CODES.N)

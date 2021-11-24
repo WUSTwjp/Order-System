@@ -10,19 +10,16 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.PopupWindow;
 
 import com.example.ordersystem.adapter.ShoppingListAdapter;
-import com.example.ordersystem.common.GoodsDB;
 import com.example.ordersystem.entity.Good;
 import com.example.ordersystem.entity.ShoppingGood;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 
-public class ShopActivity extends CommonActivity {
+public class ShopActivity extends BaseActivity {
     ShoppingListAdapter mAdapter;
 
     @RequiresApi(api = Build.VERSION_CODES.N)

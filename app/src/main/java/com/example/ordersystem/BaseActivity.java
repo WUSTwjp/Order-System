@@ -3,14 +3,9 @@ package com.example.ordersystem;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
-import android.os.Build;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ordersystem.common.NetWorkReceiver;
@@ -22,11 +17,8 @@ import com.example.ordersystem.dao.impl.OrderDaoImpl;
 import com.example.ordersystem.dao.impl.ShoppingGoodDaoImpl;
 
 import java.lang.reflect.Method;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
 
-public class CommonActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
     NetWorkReceiver netWorkReceiver;
     protected GoodDao goodDao = new GoodDaoImpl();
     protected OrderDao orderDao = new OrderDaoImpl();
@@ -49,6 +41,11 @@ public class CommonActivity extends AppCompatActivity {
         super.onPause();
     }
 
+    public <T extends BaseActivity> void flush(Class<T> current) {
+        finish();
+        Intent intent = new Intent(this, current);
+        startActivity(intent);
+    }
     //该方法用于创建显示Menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -77,15 +74,15 @@ public class CommonActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add:
-                Intent intent1 = new Intent(CommonActivity.this, ShopActivity.class);
+                Intent intent1 = new Intent(BaseActivity.this, ShopActivity.class);
                 startActivity(intent1);
                 return true;
             case R.id.set:
-                intent1 = new Intent(CommonActivity.this, SetActivity.class);
+                intent1 = new Intent(BaseActivity.this, SetActivity.class);
                 startActivity(intent1);
                 return true;
             case R.id.search:
-                intent1 = new Intent(CommonActivity.this, SearchActivity.class);
+                intent1 = new Intent(BaseActivity.this, SearchActivity.class);
                 startActivity(intent1);
                 return true;
             default:
@@ -94,10 +91,5 @@ public class CommonActivity extends AppCompatActivity {
     }
 
 
-    public <T extends CommonActivity> void flush(Class<T> current) {
-        finish();
-        Intent intent = new Intent(this, current);
-        startActivity(intent);
-    }
 
 }

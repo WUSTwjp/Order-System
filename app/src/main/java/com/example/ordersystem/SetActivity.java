@@ -1,15 +1,10 @@
 package com.example.ordersystem;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RadioButton;
 
-import com.example.ordersystem.common.GoodsDB;
-
-public class SetActivity extends CommonActivity {
+public class SetActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

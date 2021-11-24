@@ -1,24 +1,17 @@
 package com.example.ordersystem;
 
 import androidx.annotation.RequiresApi;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
-import com.example.ordersystem.adapter.GoodListAdapter;
 import com.example.ordersystem.adapter.PagerAdapter;
-import com.example.ordersystem.common.GoodsDB;
 import com.example.ordersystem.common.TypeConst;
-import com.example.ordersystem.entity.Good;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.List;
-
-public class ListActivity extends CommonActivity {
+public class ListActivity extends BaseActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override

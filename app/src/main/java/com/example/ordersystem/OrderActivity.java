@@ -1,18 +1,14 @@
 package com.example.ordersystem;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.EditText;
 
-import com.example.ordersystem.common.GoodsDB;
-import com.example.ordersystem.entity.Order;
-
 import java.util.Optional;
 
-public class OrderActivity extends CommonActivity {
+public class OrderActivity extends BaseActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
