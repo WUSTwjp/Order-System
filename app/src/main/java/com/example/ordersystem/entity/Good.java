@@ -42,24 +42,33 @@ public class Good {
     public void setType(String type) {
         this.type = type;
     }
+    public String getGoodPrice() {
+        return goodPrice;
+    }
 
-    public Good(Integer goodId, String goodName,String type, Integer drawableId, String goodDetail) {
+    public void setGoodPrice(String goodPrice) {
+        this.goodPrice = goodPrice;
+    }
+    public Good(Integer goodId, String goodName,String type, Integer drawableId, String goodDetail,String goodPrice) {
         this.goodId = goodId+80000;
         this.goodName = goodName;
         this.drawableId = drawableId;
         this.goodDetail = goodDetail;
+        this.goodPrice=goodPrice;
         this.type = type;
     }
 
-    public Good(String goodName, Integer drawableId, String goodDetail) {
+    public Good(String goodName, Integer drawableId, String goodDetail,String goodPrice) {
         this.goodName = goodName;
         this.drawableId = drawableId;
         this.goodDetail = goodDetail;
+        this.goodPrice = goodPrice;
     }
 
     @Override
     public String toString() {
         return "Good{" +
+                "goodPrice=" + goodPrice +
                 "goodId=" + goodId +
                 ", goodName='" + goodName + '\'' +
                 ", drawableId=" + drawableId +
@@ -73,4 +82,5 @@ public class Good {
     private Integer drawableId;
     private String goodDetail;
     private String type;
+    private String goodPrice;
 }

@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import com.example.ordersystem.adapter.ShoppingListAdapter;
+import com.example.ordersystem.entity.adapter.ShoppingListAdapter;
 import com.example.ordersystem.entity.Good;
 import com.example.ordersystem.entity.ShoppingGood;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -68,7 +68,7 @@ public class ShopActivity extends BaseActivity {
                 .setView(editText)
                 .setPositiveButton("确定", (dialogInterface, i) -> {
                     callBack.accept(Integer.parseInt(editText.getText().toString()));
-                    //AlertDiaLog是非阻塞的，所以出了对话框后会直接执行flush，导致对话框消失，排查很久，才发现，所以将刷新放在成功后。
+
                     flush(ShopActivity.class);
                 })
                 .setNegativeButton("取消", null)

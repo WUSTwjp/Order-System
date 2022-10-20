@@ -2,17 +2,17 @@ package com.example.ordersystem.entity;
 
 public class ShoppingGood extends Good {
 
-    public ShoppingGood(Integer goodId, String goodName, String type, Integer drawableId, String goodDetail) {
-        super(goodId, goodName, type, drawableId, goodDetail);
+    public ShoppingGood(Integer goodId, String goodName, String type, Integer drawableId, String goodDetail,String goodPrice) {
+        super(goodId, goodName, type, drawableId, goodDetail,goodPrice);
     }
 
     public ShoppingGood(Good good) {
-        super(good.getGoodId(), good.getGoodName(), good.getType(), good.getDrawableId(), good.getGoodDetail());
+        super(good.getGoodId(), good.getGoodName(), good.getType(), good.getDrawableId(), good.getGoodDetail(), good.getGoodPrice());
         this.count=1;
     }
 
-    public ShoppingGood(String goodName, Integer drawableId, String goodDetail) {
-        super(goodName, drawableId, goodDetail);
+    public ShoppingGood(String goodName, Integer drawableId, String goodDetail,String goodPrice) {
+        super(goodName, drawableId, goodDetail,goodPrice);
     }
 
     public Integer getCount() {

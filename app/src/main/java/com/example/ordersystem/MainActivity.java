@@ -16,10 +16,10 @@ public class MainActivity extends BaseActivity {
 
 
     public void change(View view) {
-        Button b = (Button) view;
-        CharSequence text = b.getText();
+        //Button b = (Button) view;
+        //CharSequence text = b.getText();
         Intent i = new Intent(MainActivity.this, ListActivity.class);
-        i.putExtra("type", text);
+        i.putExtra("type", "开始点餐");
         startActivity(i);
     }
 }

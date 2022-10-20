@@ -1,4 +1,4 @@
-package com.example.ordersystem.adapter;
+package com.example.ordersystem.entity.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,8 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ordersystem.DetailActivity;
 import com.example.ordersystem.R;
+import com.example.ordersystem.entity.Drink;
 import com.example.ordersystem.entity.Good;
-
+import com.example.ordersystem.entity.Food;
 import java.util.List;
 
 public class GoodListAdapter extends RecyclerView.Adapter<GoodViewHolder> {
@@ -22,7 +23,6 @@ public class GoodListAdapter extends RecyclerView.Adapter<GoodViewHolder> {
     private final List<Good> mGoodList;
     private LayoutInflater mInflater;
     private Context context;
-
     public GoodListAdapter(Context context,
                            List<Good> mGoodList) {
         mInflater = LayoutInflater.from(context);
@@ -42,6 +42,7 @@ public class GoodListAdapter extends RecyclerView.Adapter<GoodViewHolder> {
         holder.nameView.setText(mGoodList.get(position).getGoodName());
         holder.contentView.setText(mGoodList.get(position).getGoodDetail());
         holder.imageView.setImageResource(mGoodList.get(position).getDrawableId());
+        holder.price.setText(mGoodList.get(position).getGoodPrice());
     }
 
     @Override
@@ -55,8 +56,11 @@ class GoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickList
     public final ImageView imageView;
     public final TextView nameView;
     public final TextView contentView;
+    public final TextView price;
+    Food food;
     final GoodListAdapter mAdapter;
     private Context context;
+    Drink drink;
 
     public GoodViewHolder(View itemView, GoodListAdapter adapter, Context context) {
         super(itemView);
@@ -64,8 +68,16 @@ class GoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickList
         this.nameView = itemView.findViewById(R.id.name);
         this.contentView = itemView.findViewById(R.id.content);
         this.imageView = itemView.findViewById(R.id.picture);
+        this.price= itemView.findViewById(R.id.price);
         itemView.setOnClickListener(this);
         this.mAdapter = adapter;
+        food.getWings1();
+        food.getLeg1();
+        food.getLeg2();
+        food.getWings2();
+        food.getWholeChicken1();
+        food.getWholeChicken2();
+
     }
 
     @Override

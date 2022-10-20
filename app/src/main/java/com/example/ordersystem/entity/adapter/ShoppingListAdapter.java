@@ -1,4 +1,4 @@
-package com.example.ordersystem.adapter;
+package com.example.ordersystem.entity.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,7 +20,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ordersystem.DetailActivity;
 import com.example.ordersystem.R;
-import com.example.ordersystem.common.GoodsDB;
 import com.example.ordersystem.dao.ShoppingGoodDao;
 import com.example.ordersystem.dao.impl.ShoppingGoodDaoImpl;
 import com.example.ordersystem.entity.ShoppingGood;

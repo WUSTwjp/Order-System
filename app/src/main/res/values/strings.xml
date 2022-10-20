@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Order System</string>
-    <string name="eat">EAT</string>
-    <string name="drink">DRINK</string>
-    <string name="fun">FUN</string>
+    <string name="app_name">点餐系统</string>
+    <string name="eat">开始点餐</string>
+    <string name="drink">饮品</string>
+    <string name="fun">甜品</string>
     <string name="title_activity_drawer">DrawerActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

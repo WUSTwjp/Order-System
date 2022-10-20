@@ -12,8 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.ordersystem.adapter.GoodListAdapter;
-import com.example.ordersystem.common.GoodsDB;
+import com.example.ordersystem.entity.adapter.GoodListAdapter;
 import com.example.ordersystem.dao.impl.GoodDaoImpl;
 import com.example.ordersystem.entity.Good;
 

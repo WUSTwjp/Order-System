@@ -1,4 +1,4 @@
-package com.example.ordersystem.adapter;
+package com.example.ordersystem.entity.adapter;
 
 import android.os.Build;
 

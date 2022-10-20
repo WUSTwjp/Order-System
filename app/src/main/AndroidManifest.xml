@@ -12,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".SearchActivity"
+            android:label="商品搜索"
             android:exported="true" />
         <activity
             android:name=".FeedbackActivity"
@@ -23,26 +25,26 @@
         <activity
             android:name=".SetActivity"
             android:exported="true"
-            android:label="SetActivity"
+            android:label="地址与支付方式"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".OrderActivity"
             android:exported="true"
-            android:label="OrderActivity"
+            android:label="订单结算"
             android:parentActivityName=".ShopActivity" />
         <activity
             android:name=".ShopActivity"
             android:exported="true"
-            android:label="ShopActivity"
+            android:label="购物车"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DetailActivity"
             android:exported="true"
-            android:label="DetailActivity"
+            android:label="商品详细信息"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ListActivity"
-            android:label="ListActivity"
+            android:label="商品列表"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

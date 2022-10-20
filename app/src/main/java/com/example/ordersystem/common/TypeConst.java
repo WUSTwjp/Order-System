@@ -1,9 +1,9 @@
 package com.example.ordersystem.common;
 
 public class TypeConst {
-    public static final String EAT = "EAT";
-    public static final String DRINK = "DRINK";
-    public static final String FUN = "FUN";
+    public static final String EAT = "开始点餐";
+    public static final String DRINK = "饮品";
+    public static final String FUN = "甜品";
 
     public static int getCode(String type) {
         switch (type) {
