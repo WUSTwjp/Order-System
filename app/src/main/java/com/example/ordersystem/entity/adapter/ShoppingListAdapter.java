@@ -23,6 +23,7 @@ import com.example.ordersystem.R;
 import com.example.ordersystem.dao.ShoppingGoodDao;
 import com.example.ordersystem.dao.impl.ShoppingGoodDaoImpl;
 import com.example.ordersystem.entity.ShoppingGood;
+import com.example.ordersystem.goods.TotalPrice;
 
 import java.util.List;
 
@@ -71,6 +72,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingViewHolder
         holder.contentView.setText(mShoppingGoodList.get(position).getGoodDetail());
         holder.imageView.setImageResource(mShoppingGoodList.get(position).getDrawableId());
         holder.editText.setText(String.valueOf(mShoppingGoodList.get(position).getCount()));
+        holder.priceView.setText("单价"+ mShoppingGoodList.get(position).getGoodPrice()+"$");
         holder.itemView.setOnLongClickListener(v -> {
             mPosition = holder.getAdapterPosition();
             return false;
@@ -89,6 +91,7 @@ class ShoppingViewHolder extends RecyclerView.ViewHolder implements View.OnClick
     public final ImageView imageView;
     public final TextView nameView;
     public final TextView contentView;
+    public final TextView priceView;
     public final EditText editText;
     final ShoppingListAdapter mAdapter;
     private Context context;
@@ -101,6 +104,7 @@ class ShoppingViewHolder extends RecyclerView.ViewHolder implements View.OnClick
         this.contentView = itemView.findViewById(R.id.content1);
         this.imageView = itemView.findViewById(R.id.picture1);
         this.editText = itemView.findViewById(R.id.count);
+        this.priceView = itemView.findViewById(R.id.price1);
         this.editText.addTextChangedListener(new TextWatcher() {
 
             @Override

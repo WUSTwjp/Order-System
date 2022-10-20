@@ -42,14 +42,14 @@ public class Good {
     public void setType(String type) {
         this.type = type;
     }
-    public String getGoodPrice() {
+    public float getGoodPrice() {
         return goodPrice;
     }
 
-    public void setGoodPrice(String goodPrice) {
+    public void setGoodPrice(float goodPrice) {
         this.goodPrice = goodPrice;
     }
-    public Good(Integer goodId, String goodName,String type, Integer drawableId, String goodDetail,String goodPrice) {
+    public Good(Integer goodId, String goodName,String type, Integer drawableId, String goodDetail,float goodPrice) {
         this.goodId = goodId+80000;
         this.goodName = goodName;
         this.drawableId = drawableId;
@@ -58,7 +58,7 @@ public class Good {
         this.type = type;
     }
 
-    public Good(String goodName, Integer drawableId, String goodDetail,String goodPrice) {
+    public Good(String goodName, Integer drawableId, String goodDetail,float goodPrice) {
         this.goodName = goodName;
         this.drawableId = drawableId;
         this.goodDetail = goodDetail;
@@ -82,5 +82,5 @@ public class Good {
     private Integer drawableId;
     private String goodDetail;
     private String type;
-    private String goodPrice;
+    private float goodPrice;
 }

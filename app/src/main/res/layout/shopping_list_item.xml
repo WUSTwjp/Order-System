@@ -12,7 +12,7 @@
     </ImageView>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="247dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -40,4 +40,12 @@
         android:layout_width="wrap_content"
         android:layout_height="69dp"
         android:text="1" />
+
+    <TextView
+        android:id="@+id/price1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="price" />
+
 </LinearLayout>

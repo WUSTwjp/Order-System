@@ -1,4 +1,4 @@
-package com.example.ordersystem.entity;
+package com.example.ordersystem.goods;
 abstract class ChickenWings {
 public abstract String getName();
 public abstract String getContent();

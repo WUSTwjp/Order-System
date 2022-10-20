@@ -10,10 +10,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.ordersystem.entity.adapter.ShoppingListAdapter;
 import com.example.ordersystem.entity.Good;
 import com.example.ordersystem.entity.ShoppingGood;
+import com.example.ordersystem.goods.TotalPrice;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Optional;
@@ -42,6 +44,16 @@ public class ShopActivity extends BaseActivity {
             Intent intent1 = new Intent(ShopActivity.this, OrderActivity.class);
             startActivity(intent1);
         });
+        TextView price = findViewById(R.id.sum);
+        TotalPrice tp = TotalPrice.getInstance();
+        tp.setTotalPrice(0);
+
+        for (ShoppingGood allShoppingGood : shoppingGoodDao.getAllShoppingGoods()) {
+            tp.setTotalPrice(tp.getTotalPrice()+allShoppingGood.getGoodPrice()*allShoppingGood.getCount());
+        }
+
+
+        price.setText(""+tp.getTotalPrice()+"$");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)

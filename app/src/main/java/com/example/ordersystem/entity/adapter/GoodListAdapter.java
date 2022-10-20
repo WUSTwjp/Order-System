@@ -13,15 +13,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ordersystem.DetailActivity;
 import com.example.ordersystem.R;
-import com.example.ordersystem.entity.Drink;
+import com.example.ordersystem.goods.Drink;
 import com.example.ordersystem.entity.Good;
-import com.example.ordersystem.entity.Food;
-import com.example.ordersystem.entity.TotalPrice;
+import com.example.ordersystem.goods.Food;
+import com.example.ordersystem.goods.TotalPrice;
 
 import java.util.List;
 
 public class GoodListAdapter extends RecyclerView.Adapter<GoodViewHolder> {
-
+    Drink drink;
+    TotalPrice totalPrice;
+    Food food;
     private final List<Good> mGoodList;
     private LayoutInflater mInflater;
     private Context context;
@@ -44,7 +46,7 @@ public class GoodListAdapter extends RecyclerView.Adapter<GoodViewHolder> {
         holder.nameView.setText(mGoodList.get(position).getGoodName());
         holder.contentView.setText(mGoodList.get(position).getGoodDetail());
         holder.imageView.setImageResource(mGoodList.get(position).getDrawableId());
-        holder.price.setText(mGoodList.get(position).getGoodPrice());
+        holder.price.setText(String.valueOf(mGoodList.get(position).getGoodPrice())+'$');
     }
 
     @Override
@@ -59,26 +61,20 @@ class GoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickList
     public final TextView nameView;
     public final TextView contentView;
     public final TextView price;
-    Food food;
+
     final GoodListAdapter mAdapter;
     private Context context;
-    Drink drink;
-    TotalPrice totalPrice;
+
     public GoodViewHolder(View itemView, GoodListAdapter adapter, Context context) {
         super(itemView);
         this.context = context;
         this.nameView = itemView.findViewById(R.id.name);
         this.contentView = itemView.findViewById(R.id.content);
         this.imageView = itemView.findViewById(R.id.picture);
-        this.price= itemView.findViewById(R.id.price);
+        this.price= itemView.findViewById(R.id.price1);
         itemView.setOnClickListener(this);
         this.mAdapter = adapter;
-        food.getWings1();
-        food.getLeg1();
-        food.getLeg2();
-        food.getWings2();
-        food.getWholeChicken1();
-        food.getWholeChicken2();
+
 
     }
 

@@ -20,21 +20,21 @@ public class GoodsDB {
     public static final Order order=new Order();
 
     static {
-        goodList.add(new Good(counter++, "可乐", TypeConst.DRINK, R.drawable.drink, "可口可乐，很好喝，","10$"));
-        goodList.add(new Good(counter++, "果粒橙", TypeConst.DRINK, R.drawable.drink, "果粒橙，很好喝，","10"));
-        goodList.add(new Good(counter++, "农夫山泉", TypeConst.DRINK, R.drawable.drink, "农夫山泉有点甜，,",""));
-        goodList.add(new Good(counter++, "旺仔牛奶", TypeConst.DRINK, R.drawable.drink, "旺仔牛奶，yyds，",""));
-        goodList.add(new Good(counter++, "香辣鸡腿堡", TypeConst.EAT, R.drawable.drink, "薯片（原味）很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了",""));
-        goodList.add(new Good(counter++, "牛肉堡", TypeConst.EAT, R.drawable.eat, "薯片（番茄味），很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了",""));
-        goodList.add(new Good(counter++, "薯片（青柠味）", TypeConst.EAT, R.drawable.eat, "薯片（青柠味），很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了",""));
-        goodList.add(new Good(counter++, "薯片（红烧味）", TypeConst.EAT, R.drawable.eat, "薯片（红烧味），很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了",""));
-        goodList.add(new Good(counter++, "薯片（黄瓜味）", TypeConst.EAT, R.drawable.eat, "薯片（黄瓜味），很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了",""));
-        goodList.add(new Good(counter++, "照烧鸡排饭", TypeConst.EAT, R.drawable.eat, "照烧鸡排饭，很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了",""));
-        goodList.add(new Good(counter++, "可乐鸡翅饭", TypeConst.EAT, R.drawable.eat, "可乐鸡翅饭，很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了",""));
-        goodList.add(new Good(counter++, "黄焖鸡米饭", TypeConst.EAT, R.drawable.eat, "黄焖鸡米饭，很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了",""));
-        goodList.add(new Good(counter++, "外婆鸡汤饭", TypeConst.EAT, R.drawable.eat, "外婆鸡汤饭，很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了",""));
-        goodList.add(new Good(counter++, "冰淇淋蛋糕", TypeConst.FUN, R.drawable.fun, "冰淇淋蛋糕，很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了",""));
-        goodList.add(new Good(counter++, "提拉米苏", TypeConst.FUN, R.drawable.fun, "提拉米苏，很好吃，后面我就乱打了，因为要显得，商品详情多一些，所以我要一直打字，我想不出来，每一个要怎么写，我就都写一样的了",""));
+        goodList.add(new Good(counter++, "可乐", TypeConst.FUN, R.drawable.drink, "可口可乐，很好喝，",10));
+        goodList.add(new Good(counter++, "加糖可乐", TypeConst.DIS, R.drawable.drink, "可口可乐，很好喝，",10));
+        goodList.add(new Good(counter++, "加冰可乐", TypeConst.DIS, R.drawable.drink, "可口可乐，很好喝，",10));
+        goodList.add(new Good(counter++, "加冰加糖可乐", TypeConst.DIS, R.drawable.drink, "可口可乐，很好喝，",10));
+        goodList.add(new Good(counter++, "果粒橙", TypeConst.FUN, R.drawable.drink, "果粒橙，很好喝，",10));
+        goodList.add(new Good(counter++, "农夫山泉", TypeConst.FUN, R.drawable.drink, "农夫山泉有点甜，,",10));
+        goodList.add(new Good(counter++, "旺仔牛奶", TypeConst.DRINK, R.drawable.drink, "旺仔牛奶，yyds，",10));
+        goodList.add(new Good(counter++, "香辣鸡腿堡", TypeConst.DRINK, R.drawable.drink, "薯片（原味）很好吃，",9));
+        goodList.add(new Good(counter++, "牛肉堡", TypeConst.DRINK, R.drawable.eat, "薯片（番茄味），很好吃",9));
+        goodList.add(new Good(counter++, "薯片（青柠味）", TypeConst.DRINK, R.drawable.eat, "薯片（青柠味）",9));
+        goodList.add(new Good(counter++, "薯片（红烧味）", TypeConst.EAT, R.drawable.eat, "薯片（红烧味）",9));
+        goodList.add(new Good(counter++, "薯片（黄瓜味）", TypeConst.EAT, R.drawable.eat, "薯片（黄瓜味）",9));
+        goodList.add(new Good(counter++, "照烧鸡排饭", TypeConst.EAT, R.drawable.eat, "照烧鸡排饭，很好吃",9));
+        goodList.add(new Good(counter++, "可乐鸡翅饭", TypeConst.EAT, R.drawable.eat, "可乐鸡翅饭，很好吃",9));
+
     }
 
 }

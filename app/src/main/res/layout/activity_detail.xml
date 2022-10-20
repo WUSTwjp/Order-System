@@ -7,7 +7,7 @@
     tools:context=".DetailActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
@@ -20,7 +20,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/detail_name"
+        android:id="@+id/detail_name1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -28,10 +28,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detail_picture" />
+        app:layout_constraintTop_toBottomOf="@+id/detail_picture1" />
 
     <ImageView
-        android:id="@+id/detail_picture"
+        android:id="@+id/detail_picture1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
@@ -42,7 +42,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/detail_content"
+        android:id="@+id/detail_content1"
         android:layout_width="239dp"
         android:layout_height="170dp"
         android:text="TextView"
@@ -50,6 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detail_name"
+        app:layout_constraintTop_toBottomOf="@+id/detail_name1"
         app:layout_constraintVertical_bias="0.178" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
