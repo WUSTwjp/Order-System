@@ -72,7 +72,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingViewHolder
         holder.contentView.setText(mShoppingGoodList.get(position).getGoodDetail());
         holder.imageView.setImageResource(mShoppingGoodList.get(position).getDrawableId());
         holder.editText.setText(String.valueOf(mShoppingGoodList.get(position).getCount()));
-        holder.priceView.setText("单价"+ mShoppingGoodList.get(position).getGoodPrice()+"$");
+        holder.priceView.setText("单价"+ "¥"+mShoppingGoodList.get(position).getGoodPrice());
         holder.itemView.setOnLongClickListener(v -> {
             mPosition = holder.getAdapterPosition();
             return false;

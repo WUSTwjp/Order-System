@@ -14,35 +14,35 @@ abstract class DrinkOrder{
 class Coffee extends DrinkOrder{
 
     public Coffee() {
-        setPrice(8.0f);
+        setPrice(10.0f);
     }
 
     @Override
     public float cost() {
-        return 8.0f;
+        return 10.0f;
     }
 }
 class Coke extends DrinkOrder{
 
 
     public Coke() {
-        setPrice(7.0f);
+        setPrice(10.0f);
     }
 
     @Override
     public float cost() {
-        return 7.0f;
+        return 10.0f;
     }
 }
 class Milk extends DrinkOrder{
 
     public Milk() {
-        setPrice(6.0f);
+        setPrice(10.0f);
     }
 
     @Override
     public float cost() {
-        return 6.0f;
+        return 10.0f;
     }
 }
 abstract class Decorator extends DrinkOrder{
@@ -61,12 +61,12 @@ class Sugar extends Decorator{
 
     public Sugar(DrinkOrder drinkOrder) {
         super(drinkOrder);
-        setPrice(2.0f);
+        setPrice(1.0f);
     }
 
     @Override
     public float cost() {
-        return 2.0f;
+        return 1.0f;
     }
 }
 

@@ -46,7 +46,7 @@ public class GoodListAdapter extends RecyclerView.Adapter<GoodViewHolder> {
         holder.nameView.setText(mGoodList.get(position).getGoodName());
         holder.contentView.setText(mGoodList.get(position).getGoodDetail());
         holder.imageView.setImageResource(mGoodList.get(position).getDrawableId());
-        holder.price.setText(String.valueOf(mGoodList.get(position).getGoodPrice())+'$');
+        holder.price.setText('¥'+String.valueOf(mGoodList.get(position).getGoodPrice()));
     }
 
     @Override
@@ -80,6 +80,7 @@ class GoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+
         Intent intent = new Intent(context, DetailActivity.class);
         intent.putExtra("detail", nameView.getText());
         context.startActivity(intent);

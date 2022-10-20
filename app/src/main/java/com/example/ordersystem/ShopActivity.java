@@ -53,7 +53,7 @@ public class ShopActivity extends BaseActivity {
         }
 
 
-        price.setText(""+tp.getTotalPrice()+"$");
+        price.setText("¥"+tp.getTotalPrice());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)

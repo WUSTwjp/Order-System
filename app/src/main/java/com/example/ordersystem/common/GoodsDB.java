@@ -20,20 +20,26 @@ public class GoodsDB {
     public static final Order order=new Order();
 
     static {
-        goodList.add(new Good(counter++, "可乐", TypeConst.FUN, R.drawable.drink, "可口可乐，很好喝，",10));
-        goodList.add(new Good(counter++, "加糖可乐", TypeConst.DIS, R.drawable.drink, "可口可乐，很好喝，",10));
-        goodList.add(new Good(counter++, "加冰可乐", TypeConst.DIS, R.drawable.drink, "可口可乐，很好喝，",10));
-        goodList.add(new Good(counter++, "加冰加糖可乐", TypeConst.DIS, R.drawable.drink, "可口可乐，很好喝，",10));
-        goodList.add(new Good(counter++, "果粒橙", TypeConst.FUN, R.drawable.drink, "果粒橙，很好喝，",10));
-        goodList.add(new Good(counter++, "农夫山泉", TypeConst.FUN, R.drawable.drink, "农夫山泉有点甜，,",10));
-        goodList.add(new Good(counter++, "旺仔牛奶", TypeConst.DRINK, R.drawable.drink, "旺仔牛奶，yyds，",10));
-        goodList.add(new Good(counter++, "香辣鸡腿堡", TypeConst.DRINK, R.drawable.drink, "薯片（原味）很好吃，",9));
-        goodList.add(new Good(counter++, "牛肉堡", TypeConst.DRINK, R.drawable.eat, "薯片（番茄味），很好吃",9));
-        goodList.add(new Good(counter++, "薯片（青柠味）", TypeConst.DRINK, R.drawable.eat, "薯片（青柠味）",9));
-        goodList.add(new Good(counter++, "薯片（红烧味）", TypeConst.EAT, R.drawable.eat, "薯片（红烧味）",9));
-        goodList.add(new Good(counter++, "薯片（黄瓜味）", TypeConst.EAT, R.drawable.eat, "薯片（黄瓜味）",9));
-        goodList.add(new Good(counter++, "照烧鸡排饭", TypeConst.EAT, R.drawable.eat, "照烧鸡排饭，很好吃",9));
-        goodList.add(new Good(counter++, "可乐鸡翅饭", TypeConst.EAT, R.drawable.eat, "可乐鸡翅饭，很好吃",9));
+        goodList.add(new Good(counter++, "可乐", TypeConst.FUN, R.drawable.coke, "配料：水、可口可乐",10));
+        goodList.add(new Good(counter++, "加糖可乐", TypeConst.DIS, R.drawable.coke, "配料：水、可口可乐，",11));
+        goodList.add(new Good(counter++, "加冰可乐", TypeConst.DIS, R.drawable.coke, "配料：水、可口可乐",11));
+        goodList.add(new Good(counter++, "加冰加糖可乐", TypeConst.DIS, R.drawable.coke, "配料：水、可口可乐",12));
+        goodList.add(new Good(counter++, "牛奶", TypeConst.FUN, R.drawable.milk, "配料：水、纯牛奶",10));
+        goodList.add(new Good(counter++, "加糖牛奶", TypeConst.DIS, R.drawable.milk, "配料：水、纯牛奶",11));
+        goodList.add(new Good(counter++, "加冰牛奶", TypeConst.DIS, R.drawable.milk, "配料：水、纯牛奶",11));
+        goodList.add(new Good(counter++, "加冰加糖牛奶", TypeConst.DIS, R.drawable.milk, "配料：水、纯牛奶",12));
+        goodList.add(new Good(counter++, "咖啡", TypeConst.FUN, R.drawable.coffee, "配料：水、速溶咖啡",10));
+        goodList.add(new Good(counter++, "加糖咖啡", TypeConst.DIS, R.drawable.coffee, "配料：水、速溶咖啡,",11));
+        goodList.add(new Good(counter++, "加冰咖啡", TypeConst.DIS, R.drawable.coffee, "配料：水、速溶咖啡",11));
+        goodList.add(new Good(counter++, "加冰加糖咖啡", TypeConst.DIS, R.drawable.coffee, "配料：水、速溶咖啡",12));
+        goodList.add(new Good(counter++, "炸鸡翅", TypeConst.DRINK, R.drawable.zhajichi, "好吃的炸鸡翅",8));
+        goodList.add(new Good(counter++, "炸鸡腿", TypeConst.DRINK, R.drawable.zhajitui, "又大又好吃的炸鸡腿",9));
+        goodList.add(new Good(counter++, "炸全鸡", TypeConst.DRINK, R.drawable.zhaji, "超级好吃的炸鸡",20));
+        goodList.add(new Good(counter++, "炸鸡汉堡", TypeConst.DRINK, R.drawable.burger, "健康美味的炸鸡汉堡）",15));
+        goodList.add(new Good(counter++, "烤鸡翅", TypeConst.EAT, R.drawable.kaojichi, "好吃的烤鸡翅",8));
+        goodList.add(new Good(counter++, "烤鸡腿", TypeConst.EAT, R.drawable.kaojitui, "又大又好吃的烤鸡腿",9));
+        goodList.add(new Good(counter++, "烤全鸡", TypeConst.EAT, R.drawable.kaoji, "超级好吃的烤鸡",20));
+        goodList.add(new Good(counter++, "烤鸡汉堡", TypeConst.EAT, R.drawable.hambur, "健康美味的烤鸡汉堡",15));
 
     }
 

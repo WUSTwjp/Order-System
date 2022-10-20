@@ -81,10 +81,10 @@ public class BaseActivity extends AppCompatActivity {
                 intent1 = new Intent(BaseActivity.this, SetActivity.class);
                 startActivity(intent1);
                 return true;
-            case R.id.search:
-                intent1 = new Intent(BaseActivity.this, SearchActivity.class);
-                startActivity(intent1);
-                return true;
+//            case R.id.search:
+//                intent1 = new Intent(BaseActivity.this, SearchActivity.class);
+//                startActivity(intent1);
+//                return true;
             default:
         }
         return super.onOptionsItemSelected(item);

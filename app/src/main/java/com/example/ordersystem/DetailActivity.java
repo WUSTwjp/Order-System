@@ -31,40 +31,48 @@ public class DetailActivity extends BaseActivity {
         name.setText(good.getGoodName());
         content.setText(good.getGoodDetail());
         imageView.setImageResource(good.getDrawableId());
+        String tp=good.getType();
         FloatingActionButton fab = findViewById(R.id.fab1);
         fab.setOnClickListener(view -> {
-            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("弹出多选框");
-            final String[] choice = new String[]{"加冰", "加糖"}; // 选择项
-            final boolean[] isCheck = new boolean[choice.length]; // 是否被选中
-            builder.setMultiChoiceItems(choice, null,
-                    new DialogInterface.OnMultiChoiceClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                            if (isChecked == true)
-                                isCheck[which] = true;
-                            else if(isChecked == false)
-                                isCheck[which] = false;
-                        }
-                    });
-            builder.setNegativeButton("取消", null);
-            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
+            if(tp.equals("甜品")){
+                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("请选择是否加冰加糖");
+                final String[] choice = new String[]{"加冰", "加糖"}; // 选择项
+                final boolean[] isCheck = new boolean[choice.length]; // 是否被选中
+                builder.setMultiChoiceItems(choice, null,
+                        new DialogInterface.OnMultiChoiceClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                                if (isChecked == true)
+                                    isCheck[which] = true;
+                                else if(isChecked == false)
+                                    isCheck[which] = false;
+                            }
+                        });
+                builder.setNegativeButton("取消", null);
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-                    for (int i=0;i<2;i++) {
-                        if(isCheck[i]){
-                            extra.append(choice[i]);
+                        for (int i=0;i<2;i++) {
+                            if(isCheck[i]){
+                                extra.append(choice[i]);
+                            }
                         }
+                        System.out.println("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\n"+extra);
+                        Intent intent1 = new Intent(DetailActivity.this, ShopActivity.class);
+                        intent1.putExtra("select", extra+good.getGoodName());
+                        startActivity(intent1);
                     }
-                    System.out.println("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\n"+extra);
-                    Intent intent1 = new Intent(DetailActivity.this, ShopActivity.class);
-                    intent1.putExtra("select", extra+good.getGoodName());
-                    startActivity(intent1);
-                }
-            });
-            builder.create();
-            builder.show();
+                });
+                builder.create();
+                builder.show();
+            }else{
+                Intent intent1 = new Intent(DetailActivity.this, ShopActivity.class);
+                intent1.putExtra("select", good.getGoodName());
+                startActivity(intent1);
+            }
+
 
 
         });
