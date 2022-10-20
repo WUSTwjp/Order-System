@@ -16,6 +16,8 @@ import com.example.ordersystem.R;
 import com.example.ordersystem.entity.Drink;
 import com.example.ordersystem.entity.Good;
 import com.example.ordersystem.entity.Food;
+import com.example.ordersystem.entity.TotalPrice;
+
 import java.util.List;
 
 public class GoodListAdapter extends RecyclerView.Adapter<GoodViewHolder> {
@@ -61,7 +63,7 @@ class GoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickList
     final GoodListAdapter mAdapter;
     private Context context;
     Drink drink;
-
+    TotalPrice totalPrice;
     public GoodViewHolder(View itemView, GoodListAdapter adapter, Context context) {
         super(itemView);
         this.context = context;
